@@ -25,15 +25,37 @@ $(document).ready(function () {
     var sx = $('.left');
 
     dx.click(function(){
-        
-            baseMonth.add(1, "months")
             
-            printMonth(template, baseMonth);
+           
 
             // ottieni festività mese corrente
             printHoliday(baseMonth);
+            if (baseMonth.month() < 11) {
+                baseMonth.add(1, "months")
+            
+                printMonth(template, baseMonth);
+                
+            }else {
+                alert('Non gestito')
+            }
         
-    })
+    });
+    sx.click(function(){
+        
+       
+        // ottieni festività mese corrente
+        
+        if (baseMonth.month() > 0) {
+            baseMonth.add(-1, "months")
+        
+            printMonth(template, baseMonth);
+            printHoliday(baseMonth);
+            
+        }else {
+            alert('Non gestito')
+        }
+    
+});
 
 }); // <-- End doc ready
 
@@ -44,6 +66,7 @@ $(document).ready(function () {
 
 // Stampa a schermo i giorni del mese
 function printMonth(template, date) {
+    $('.month-list').html(" ");
     // numero giorni nel mese
     var daysInMonth = date.daysInMonth();
 
