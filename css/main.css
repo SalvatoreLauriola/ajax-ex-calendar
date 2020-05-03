@@ -6,19 +6,37 @@
 
 body {
     font-family: sans-serif;
+    background-color: grey;
 }
 
 .container {
     margin: 0 auto;
     text-align: center;
+    width: 800px;
+    
+}
+
+h1 {
+    color: chartreuse
+}
+
+li {
+    background-color: beige;
+    border: 1px solid green;
+    float: left;
+    width: 200px;
+    height: 60px;
+    padding-top: 20px;
 }
 
 li.holiday {
     color: red;
+    background-color: aquamarine;
 }
 
 .slider {
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
 }
 .left {
     padding: 10px;
@@ -26,4 +44,15 @@ li.holiday {
 
 .right {
     padding: 20px;
+}
+
+.month-list {
+    list-style: none;
+}
+
+button {
+    background-color: aqua;
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
 }

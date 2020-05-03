@@ -6,7 +6,6 @@ $(document).ready(function () {
     /**
      * SETUP
      */
-
     // Punto di partenza
     var baseMonth = moment('2018-01-01'); 
 
@@ -29,11 +28,12 @@ $(document).ready(function () {
            
 
             // ottieni festività mese corrente
-            printHoliday(baseMonth);
+          
             if (baseMonth.month() < 11) {
                 baseMonth.add(1, "months")
             
                 printMonth(template, baseMonth);
+                printHoliday(baseMonth);
                 
             }else {
                 alert('Non gestito')
@@ -88,7 +88,7 @@ function printMonth(template, date) {
         // imposta dati template
         var context = {
             class: 'day',
-            day: thisDate.format('DD MMMM'),
+            day: thisDate.format('D'),
             completeDate: thisDate.format('YYYY-MM-DD')
         };
 
